@@ -46,7 +46,7 @@ const AuthLayout = () => {
           {/* begin::Image */}
           <img
             className="mx-auto w-275px w-md-50 w-xl-500px mb-10 mb-lg-20 rounded opacity-100"
-            src={toAbsoluteUrl("media/misc/5a.png")}
+            src={toAbsoluteUrl("media/misc/city.png")}
             alt=""
           />
           {/* end::Image */}
