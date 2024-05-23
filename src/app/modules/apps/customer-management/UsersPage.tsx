@@ -4,8 +4,8 @@ import {UsersListWrapper} from './users-list/UsersList'
 
 const usersBreadcrumbs: Array<PageLink> = [
   {
-    title: 'Store Management',
-    path: '/store-management/stores',
+    title: 'customer Management',
+    path: '/customer-management/customers',
     isSeparator: false,
     isActive: false,
   },
@@ -17,25 +17,6 @@ const usersBreadcrumbs: Array<PageLink> = [
   },
 ]
 
-export const UsersPage = () => {
-  return (
-    <Routes>
-      <Route element={<Outlet />}>
-        <Route
-          path='stores'
-          element={
-            <>
-              <PageTitle breadcrumbs={usersBreadcrumbs}>Stores list</PageTitle>
-              <UsersListWrapper />
-            </>
-          }
-        />
-      </Route>
-      <Route index element={<Navigate to='/store-management/stores' />} />
-    </Routes>
-  )
-}
-
 export const CustomersPage = () => {
   return (
     <Routes>
@@ -44,13 +25,13 @@ export const CustomersPage = () => {
           path='customers'
           element={
             <>
-              <PageTitle breadcrumbs={usersBreadcrumbs}>Stores list</PageTitle>
+              <PageTitle breadcrumbs={usersBreadcrumbs}>Customers list</PageTitle>
               <UsersListWrapper />
             </>
           }
         />
       </Route>
-      <Route index element={<Navigate to='/store-management/stores' />} />
+      <Route index element={<Navigate to='/customer-management/customers' />} />
     </Routes>
   )
 }

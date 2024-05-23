@@ -18,7 +18,7 @@ const FooterWrapper = () => {
             config.app.footer.containerClass
           )}
         >
-          <Footer />
+          {/* <Footer /> */}
         </div>
       ) : (
         <Footer />

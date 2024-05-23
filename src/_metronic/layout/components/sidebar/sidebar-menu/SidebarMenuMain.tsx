@@ -13,8 +13,9 @@ const SidebarMenuMain = () => {
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
         fontIcon='bi-app-indicator'
       />
-      <SidebarMenuItem to='/builder' icon='shop' title='Store list' fontIcon='bi-layers' />
-      <SidebarMenuItem to='/builder' icon='basket-ok' title='Customer list' fontIcon='bi-layers' />
+      <SidebarMenuItem to='/store-management/stores' icon='shop' title='Store list' fontIcon='bi-layers' />
+      <SidebarMenuItem to='/customer-management/customers' icon='basket-ok' title='Customer list' fontIcon='bi-layers' />
+      <SidebarMenuItem to='/product-import' icon='basket-ok' title='Customer list' fontIcon='bi-layers' />
       <SidebarMenuItem to='/builder' icon='logistic' title='Product import' fontIcon='bi-layers' />
       <SidebarMenuItem to='/builder' icon='parcel-tracking' title='UPC' fontIcon='bi-layers' />
       <SidebarMenuItem to='/builder' icon='delivery-3' title='Promotions' fontIcon='bi-layers' />

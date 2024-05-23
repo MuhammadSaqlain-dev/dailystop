@@ -98,7 +98,38 @@ const UserEditModalForm: FC<Props> = ({ user, isUserLoading }) => {
           {/* begin::Input group */}
           <div className="fv-row mb-7">
             {/* begin::Label */}
-            <label className="required fw-bold fs-6 mb-2">Full Name</label>
+            <label className="required fw-bold fs-6 mb-2">First Name</label>
+            {/* end::Label */}
+
+            {/* begin::Input */}
+            <input
+              placeholder="Full name"
+              {...formik.getFieldProps("name")}
+              type="text"
+              name="name"
+              className={clsx(
+                "form-control form-control-solid mb-3 mb-lg-0",
+                { "is-invalid": formik.touched.name && formik.errors.name },
+                {
+                  "is-valid": formik.touched.name && !formik.errors.name,
+                }
+              )}
+              autoComplete="off"
+              disabled={formik.isSubmitting || isUserLoading}
+            />
+            {formik.touched.name && formik.errors.name && (
+              <div className="fv-plugins-message-container">
+                <div className="fv-help-block">
+                  <span role="alert">{formik.errors.name}</span>
+                </div>
+              </div>
+            )}
+            {/* end::Input */}
+          </div>
+
+          <div className="fv-row mb-7">
+            {/* begin::Label */}
+            <label className="required fw-bold fs-6 mb-2">Last Name</label>
             {/* end::Label */}
 
             {/* begin::Input */}
@@ -160,6 +191,35 @@ const UserEditModalForm: FC<Props> = ({ user, isUserLoading }) => {
           {/* end::Input group */}
 
           {/* begin::Input group */}
+          <div className="fv-row mb-7">
+            {/* begin::Label */}
+            <label className="required fw-bold fs-6 mb-2">Phone</label>
+            {/* end::Label */}
+
+            {/* begin::Input */}
+            <input
+              placeholder="Address"
+              {...formik.getFieldProps("address")}
+              className={clsx(
+                "form-control form-control-solid mb-3 mb-lg-0",
+                { "is-invalid": formik.touched.email && formik.errors.email },
+                {
+                  "is-valid": formik.touched.email && !formik.errors.email,
+                }
+              )}
+              type="text"
+              name="address"
+              autoComplete="off"
+              disabled={formik.isSubmitting || isUserLoading}
+            />
+            {/* end::Input */}
+            {formik.touched.email && formik.errors.email && (
+              <div className="fv-plugins-message-container">
+                <span role="alert">{formik.errors.email}</span>
+              </div>
+            )}
+          </div>
+
           <div className="fv-row mb-7">
             {/* begin::Label */}
             <label className="required fw-bold fs-6 mb-2">Address</label>
