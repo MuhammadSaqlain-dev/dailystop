@@ -4,9 +4,11 @@ import { MasterLayout } from "../../_metronic/layout/MasterLayout";
 import TopBarProgress from "react-topbar-progress-indicator";
 import { DashboardWrapper } from "../pages/dashboard/DashboardWrapper";
 import { MenuTestPage } from "../pages/MenuTestPage";
+import SearchUPC from "../pages/upc-search/SearchUPC";
 import { getCSSVariableValue } from "../../_metronic/assets/ts/_utils";
 import { WithChildren } from "../../_metronic/helpers";
 import BuilderPageWrapper from "../pages/layout-builder/BuilderPageWrapper";
+import Promotions from "../pages/promotions/Promotions";
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import("../modules/profile/ProfilePage"));
@@ -15,16 +17,23 @@ const PrivateRoutes = () => {
   const WidgetsPage = lazy(() => import("../modules/widgets/WidgetsPage"));
   const ChatPage = lazy(() => import("../modules/apps/chat/ChatPage"));
   const UsersPage = lazy(() =>
-    import('../modules/apps/user-management/UsersPage').then(module => ({
+    import("../modules/apps/user-management/UsersPage").then((module) => ({
       default: module.UsersPage,
     }))
   );
   const CustomerPage = lazy(() =>
-    import('../modules/apps/customer-management/UsersPage').then(module => ({
+    import("../modules/apps/customer-management/UsersPage").then((module) => ({
       default: module.CustomersPage,
     }))
   );
-  const ProductImportPage = lazy(() => import("../pages/product-import/ProductImport"));
+  const ProductImportPage = lazy(
+    () => import("../pages/product-import/ProductImport")
+  );
+  const PromotionsPage = lazy(() =>
+    import("../modules/apps/promotions/UsersPage").then((module) => ({
+      default: module.UsersPage,
+    }))
+  );
 
   return (
     <Routes>
@@ -48,13 +57,22 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         />
+        <Route
+          path="promotion-management/*"
+          element={
+            <SuspensedView>
+              <PromotionsPage />
+            </SuspensedView>
+          }
+        />
         <Route path="/product-import" element={<ProductImportPage />} />
         <Route path="dashboard" element={<DashboardWrapper />} />
-        <Route path="builder" element={<BuilderPageWrapper />} />
+        <Route path="/search-upc" element={<SearchUPC />} />
+        <Route path="/promotions" element={<Promotions />} />
         <Route path="menu-test" element={<MenuTestPage />} />
         {/* Lazy Modules */}
         <Route
-          path="crafted/pages/profile/*"
+          path="reports/*"
           element={
             <SuspensedView>
               <ProfilePage />
@@ -62,15 +80,7 @@ const PrivateRoutes = () => {
           }
         />
         <Route
-          path="crafted/pages/wizards/*"
-          element={
-            <SuspensedView>
-              <WizardsPage />
-            </SuspensedView>
-          }
-        />
-        <Route
-          path="crafted/widgets/*"
+          path="inventory/*"
           element={
             <SuspensedView>
               <WidgetsPage />

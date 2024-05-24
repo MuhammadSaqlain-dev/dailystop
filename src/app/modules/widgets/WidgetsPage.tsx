@@ -10,7 +10,7 @@ import {Statistics} from './components/Statistics'
 const widgetsBreadCrumbs: Array<PageLink> = [
   {
     title: 'Widgets',
-    path: '/crafted/widgets/charts',
+    path: '/inventory/warehouses',
     isSeparator: false,
     isActive: false,
   },
@@ -27,7 +27,7 @@ const WidgetsPage = () => {
     <Routes>
       <Route element={<Outlet />}>
         <Route
-          path='charts'
+          path='warehouses'
           element={
             <>
               <PageTitle breadcrumbs={widgetsBreadCrumbs}>Charts</PageTitle>
@@ -36,7 +36,7 @@ const WidgetsPage = () => {
           }
         />
         <Route
-          path='feeds'
+          path='transfer-inventory'
           element={
             <>
               <PageTitle breadcrumbs={widgetsBreadCrumbs}>Feeds</PageTitle>

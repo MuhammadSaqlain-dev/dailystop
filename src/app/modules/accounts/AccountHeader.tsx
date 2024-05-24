@@ -15,7 +15,7 @@ const AccountHeader: FC = () => {
       <ToolbarWrapper />
       <Content>
         <div className='card mb-5 mb-xl-10'>
-          <div className='card-body pt-9 pb-0'>
+          <div className='card-body  pb-0'>
             <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
               <div className='me-7 mb-4'>
                 <div className='symbol symbol-100px symbol-lg-160px symbol-fixed position-relative'>
